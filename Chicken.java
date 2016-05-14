@@ -2,7 +2,7 @@ public class Chicken extends Enemy
 {
   private int myLives, mySize;
   private double myX, myY;
-  
+  private Egg myEgg;
   public Chicken(int n, double x, double y)
   {
     myLives=n/5 +1;
@@ -33,6 +33,9 @@ public class Chicken extends Enemy
   }
   public void attack(User u){
     u.setLives(u.getLives()-1);
+  }
+  public void dropEgg(){
+    myEgg.release();
   }
 
 }
