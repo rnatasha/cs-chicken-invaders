@@ -3,9 +3,9 @@ public class Chicken extends Enemy
   private int myLives, mySize;
   private double myX, myY;
   
-  public Chicken(double x, double y)
+  public Chicken(int n, double x, double y)
   {
-    myLives=3;
+    myLives=n/5 +1;
     mySize=20; //SOME DEFAULT SIZE FOR ALL THE SMALL CHICKENS?
     myX=x;
     myY=y;
