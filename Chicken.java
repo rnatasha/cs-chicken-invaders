@@ -9,6 +9,7 @@ public class Chicken extends Enemy
     mySize=20; //SOME DEFAULT SIZE FOR ALL THE SMALL CHICKENS?
     myX=x;
     myY=y;
+    myEgg = new Egg(myX, myY);
   }
   public int getLives(){
     return myLives;
