@@ -35,8 +35,9 @@ public class Chicken extends Enemy
   public void attack(User u){
     u.setLives(u.getLives()-1);
   }
-  public void dropEgg(){
-    myEgg.release();
+  public void dropEgg(double bottomEdge){
+    myEgg.release(bottomEdge);
+    //repaint egg
   }
 
 }
