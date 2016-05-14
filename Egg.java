@@ -1,10 +1,9 @@
 public class Egg extends Enemy
 {
-  private int myLives;
+  //private int myLives;
   private double myX, myY;
   
-  public Egg(int n, double x, double y){
-    myLives = n;
+  public Egg(double x, double y){
     myX = x;
     myY = y;
   }
