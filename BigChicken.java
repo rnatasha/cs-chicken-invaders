@@ -1,4 +1,4 @@
-public class BigChicken
+public class BigChicken extends Enemy
 {
   
 }
