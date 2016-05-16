@@ -5,11 +5,18 @@ public class Chicken extends Enemy
   private Egg myEgg;
   public Chicken(int n, double x, double y)
   {
-    myLives=n/5 +1;
+    myLives=(n-1)/5 +1;
     mySize=20; //SOME DEFAULT SIZE FOR ALL THE SMALL CHICKENS?
     myX=x;
     myY=y;
     myEgg = new Egg(myX, myY);
+  }
+  public Chicken(int n, int s, double x, double y){
+    myLives=(n/5)*50;
+    mySize=s;
+    myX=x;
+    myY=y;
+    myEgg=new Egg(my)
   }
   public int getLives(){
     return myLives;
@@ -25,6 +32,9 @@ public class Chicken extends Enemy
   }
   public void setLives(int x){ //not sure if this is necessary either, or if attack method will do
     myLives=x;
+  }
+  public void setSize(int s){
+    mySize=s;
   }
   public void setX(double x){
     myX=x;
