@@ -13,7 +13,7 @@ public class Chicken extends Enemy
   private Egg myEgg;
    /************************************************************* 
    * Constructs a Chicken with initial coordinates specified by x and y,
-   * the number of lives specified by (n-1)/5 + 1, and the size 
+   * the number of lives specified by (n-1)/5 + 1, where n is level number, and the size 
    * specified by 20.
    **************************************************************/
   public Chicken(int n, double x, double y)
@@ -26,7 +26,7 @@ public class Chicken extends Enemy
   }
    /************************************************************* 
    * Constructs a "Big Boss" Chicken with initial coordinates specified by x and y,
-   * the number of lives specified by (n/5)*50, and the size 
+   * the number of lives specified by (n/5)*50, where n is level number, and the size 
    * specified by s.
    **************************************************************/
   public Chicken(int n, int s, double x, double y){
@@ -34,7 +34,7 @@ public class Chicken extends Enemy
     mySize=s;
     myX=x;
     myY=y;
-    myEgg=new Egg(my);
+    myEgg=new Egg(myX, myY);
   }
    /*************************************************************** 
    * Returns the Chicken's lives
@@ -93,8 +93,8 @@ public class Chicken extends Enemy
     myY=y;
   }
    /***************************************************************
-   * Sets the User and its lives
-   * @param y	 assigns u to the User and assigns its lives
+   * Attacks the User passed by subtracting 1 life
+   * @param u	sets User's lives to current lives minus 1 
    **************************************************************/
   public void attack(User u){
     u.setLives(u.getLives()-1);
@@ -106,6 +106,7 @@ public class Chicken extends Enemy
   public void dropEgg(double bottomEdge){
     myEgg.release(bottomEdge);
     //repaint egg
+    myEgg= new Egg(myX,myY);
   }
 
 }
