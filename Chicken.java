@@ -1,4 +1,8 @@
-	/*****************************************************************
+	import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.image.*;
+   /*****************************************************************
 	* A Chicken is an Ememy that maintains information about its lives. A Chicken
 	* knows how to return its lives, set its lives, attack a User, 
 	* and drop an Egg object to the bottom edge of the screen.
