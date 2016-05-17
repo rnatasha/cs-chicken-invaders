@@ -16,7 +16,7 @@ public class Chicken extends Enemy
     mySize=s;
     myX=x;
     myY=y;
-    myEgg=new Egg(my)
+    myEgg=new Egg(myX, myY);
   }
   public int getLives(){
     return myLives;
