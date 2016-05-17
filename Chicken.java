@@ -34,7 +34,7 @@ public class Chicken extends Enemy
     mySize=s;
     myX=x;
     myY=y;
-    myEgg=new Egg(my)
+    myEgg=new Egg(my);
   }
    /*************************************************************** 
    * Returns the Chicken's lives
