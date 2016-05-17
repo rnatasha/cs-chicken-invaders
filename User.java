@@ -1,3 +1,7 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.image.*;
 public class User
 {
   private int myLives;
@@ -34,6 +38,7 @@ public class User
   }
   public boolean isTouching(Enemy e){
     //not finished
+    return true;
   }
   public void move(int x){//when used x= 1 or -1, for left or right movement along bottom of screen
     myX+=x;
