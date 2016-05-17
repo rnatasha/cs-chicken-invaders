@@ -1,7 +1,7 @@
 	/*****************************************************************
-	* A Circle is an Ememy that maintains information about its lives. A Circle
-	* knows how to return its lives, set its lives, use the attack method, 
-	* and drop an egg based on its coordinates.
+	* A Chicken is an Ememy that maintains information about its lives. A Chicken
+	* knows how to return its lives, set its lives, attack a User, 
+	* and drop an Egg object to the bottom edge of the screen.
 	 
 	* @author 
 	* @version 
