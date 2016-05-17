@@ -48,6 +48,8 @@ public class Chicken extends Enemy
   public void dropEgg(double bottomEdge){
     myEgg.release(bottomEdge);
     //repaint egg
+    //ensures chicken has unlimited supply of eggs
+    myEgg= new Egg(myX, myY);
   }
 
 }
