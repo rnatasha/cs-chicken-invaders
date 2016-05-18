@@ -11,6 +11,7 @@ public class User
     myLives=3;
     myX=200; //some X and Y value such that it is in the middle bottom of the screen
     myY=400;
+    myRocket= new Rocket();
   }
   public int getLives(){
     return myLives;
@@ -31,7 +32,7 @@ public class User
     myY=y;
   }
   public void attack(Enemy e){
-    e.setLives(e.getLives()-1);
+    myRocket.attack(e);
   }
   public void draw(Graphics myBuffer, String filename){
     ImageIcon pic = new ImageIcon(filename);
