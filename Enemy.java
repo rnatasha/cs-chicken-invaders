@@ -6,4 +6,5 @@ public abstract class Enemy
   public abstract int getLives();
   public abstract double getX();
   public abstract double getY();
+  public abstract int getSize();
 }
