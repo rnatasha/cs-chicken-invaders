@@ -1,4 +1,7 @@
-public abstract class Rocket
+public class Rocket
 {
-  public abstract void attack(Enemy e);
+  public void attack(Enemy e){
+    
+  }
+  
 }
