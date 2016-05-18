@@ -103,9 +103,9 @@ public class Chicken extends Enemy
   public void attack(User u){
     u.setLives(u.getLives()-1);
   }
-   /***************************************************************
-   * Sets dropEgg's location
-   * @param y	 assigns myEgg to be released in the bottomEdge
+   /**************************************************************************************************************
+   * Calls the release() method of Chicken's Egg object and re-initializes myEgg to x and y coordinates of Chicken
+   * @param bottomEdge	passed to release() method of Egg
    **************************************************************/
   public void dropEgg(double bottomEdge){
     myEgg.release(bottomEdge);
