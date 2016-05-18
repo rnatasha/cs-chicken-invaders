@@ -37,10 +37,13 @@ public class User
     ImageIcon pic = new ImageIcon(filename);
     myBuffer.drawImage(pic.getImage(), 80, 80, 175, 150, null); //not the exact dimensions
   }
+  private double distance(double x1, double y1, double x2, double y2) {
+    return Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
+  }
   public boolean isTouching(Enemy e){
     double d = distance(myX, myY, e.getX(), e.getY());
-        if(d <= b.getRadius() + pd.getRadius())
-         
+        if(d >= b.getRadius() + pd.getRadius())
+          return false;
     return true;
   }
   public void move(int x){//when used x= 1 or -1, for left or right movement along bottom of screen
