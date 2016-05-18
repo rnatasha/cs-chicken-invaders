@@ -41,11 +41,15 @@ public class User
     return Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
   }
   public boolean isTouching(Enemy e){
-    double d = distance(myX, myY, e.getX(), e.getY());
-        if(d >= b.getRadius() + pd.getRadius())
-          return false;
-    return true;
+    for(double x = getX(); x<=getX()+175;x++){
+      for(double y = getY(); y<=getY()+150;y++){
+        if(distance(x, y, e.getX(), e.getY()) <= e.getSize())
+          return true;
+      }
+    }
+    return false;
   }
+   
   public void move(int x){//when used x= 1 or -1, for left or right movement along bottom of screen
     myX+=x;
   }
