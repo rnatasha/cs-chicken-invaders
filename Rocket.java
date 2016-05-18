@@ -1,13 +1,10 @@
 public class Rocket
 {
   private double myX, myY;
-  
   public Rocket(double x, double y){
     myX=x;
     myY=y;
-    
   }
-   
   public double getX(){
     return myX;
   }
