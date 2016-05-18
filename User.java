@@ -6,7 +6,7 @@ public class User
 {
   private int myLives;
   private double myX, myY;
-  
+  private Rocket myRocket;
   public User(){
     myLives=3;
     myX=200; //some X and Y value such that it is in the middle bottom of the screen
