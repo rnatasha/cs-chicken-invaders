@@ -78,7 +78,7 @@ public class Egg extends Enemy
   }
    /***************************************************************
    * Increases the y coordiante of Egg object until it reaches the bottomEdge of the screen.
-   * @param y	 assigns myEgg to be released in the bottomEdge
+   * @param bottomEdge	increases y-coordinate until equal to bottomEdge
    **************************************************************/
   public void release(double bottomEdge){
     while(myY!=bottomEdge){
