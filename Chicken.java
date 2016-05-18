@@ -18,7 +18,7 @@ public class Chicken extends Enemy
    /************************************************************* 
    * Constructs a Chicken with initial coordinates specified by x and y,
    * the number of lives specified by (n-1)/5 + 1, where n is level number, and the size 
-   * specified by 20.
+   * specified by 20. Initializes Egg object with Chicken's x and y coordinates.
    **************************************************************/
   public Chicken(int n, double x, double y)
   {
@@ -31,7 +31,7 @@ public class Chicken extends Enemy
    /************************************************************* 
    * Constructs a "Big Boss" Chicken with initial coordinates specified by x and y,
    * the number of lives specified by (n/5)*50, where n is level number, and the size 
-   * specified by s.
+   * specified by s. Initializes Egg object with Chicken's x and y coordinates.
    **************************************************************/
   public Chicken(int n, int s, double x, double y){
     myLives=(n/5)*50;
