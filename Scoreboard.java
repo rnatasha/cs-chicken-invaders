@@ -1,13 +1,14 @@
    //Name______________________________ Date_____________
    import javax.swing.*;
-   import java.awt.*;
+   import java.awt.*; //testing to see if two people can work on it at once 
    public class Scoreboard10 extends JPanel
    {
       private JLabel label1, label2, label3;
       private int run, max;
       public Scoreboard10()
       {
-         setLayout(new GridLayout(1, 5));
+         setLayout(new BoxLayout(1, 5));
+         
          run = max = 0;
       
          add(new JLabel("Run: ", SwingConstants.RIGHT));
