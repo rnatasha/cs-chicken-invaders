@@ -8,6 +8,7 @@ public class ScorePanel
   { 
     User[] array = input("data.txt");
     sort(array);
+    output(array);
   }
 
   public static User[] input(String filename)
@@ -57,5 +58,22 @@ public static void swap(User[] array, int a, int b)
   array[a] = array[b];
   array[b] = temp;
 }
+
+public static void output(User[] array) throws Exception
+{
+  PrintStream outfile = null;
+  try{
+    outfile = new PrintStream(new FileOutputStream("data.txt"));
+  }
+  catch(FileNotFoundException e)
+   {
+  JOptionPane.showMessageDialog(null, "The file could not be created.");
+  for(int k = 0; k < array.length; k++)
+    {
+      outfile.println(array[k].getName() + "\n" + array[k].getScore());
+    }
+ outfile.close();
+    }
+  }
   }
  
