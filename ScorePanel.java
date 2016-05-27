@@ -1,14 +1,15 @@
 import java.io.*;      //the File class
 import java.util.*;    //the Scanner class
 import javax.swing.JOptionPane;
-import java.util.Comparator;
 public class ScorePanel
 { //print scores & names into data.txt before running this
   //order: name, score
-  public static void main(String[] args) throws Exception
+  public ScorePanel(User[] array)
   { 
     User[] array = input("data.txt");
+    sort(array);
   }
+
   public static User[] input(String filename)
   {
     Scanner infile = null;
@@ -20,6 +21,41 @@ public class ScorePanel
       JOptionPane.showMessageDialog(null, "The file could not be found.");
       System.exit(0);
     }
+    int numitems = infile.nextInt();
+    User[] array = new User[numitems];
+    for(int k = 0; k < numitems; k++)
+      array[k] = new User(infile.next(), infile.nextInt());
+    infile.close();
+    return array;
     }
+    
+public static User[] sort(User[] array)  //need findMin method
+{
+  int maxPos;
+  for(int k = 0; k < array.length; k++)
+  {
+    maxPos = findMax(array, array.length - k, c);
+    swap(array, maxPos, array.length-k-1);
+  }
+}
+
+public static int findMin(User[] array, int upper)
+{
+  int maxPos = 0;
+  for(int j = 1; j < upper; j++)
+  {
+    if(array[j].getScore() > array[maxPos].getScore())
+      maxPos = j;
+  }
+  return maxPos;
+  }
+}
+
+public static void swap(User[] array, int a, int b)
+{
+  User temp = array[a];
+  array[a] = array[b];
+  array[b] = temp;
+}
   }
  
