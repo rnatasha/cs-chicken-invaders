@@ -6,11 +6,14 @@ public class LevelOnePanel extends JPanel
 {
     public void paintComponent(Graphics g)
     {
-      
-      g.drawImage(chicken.getImage(), 50, 50, null);
-      for(int x = 15; x<=1015; x+=30) 
+      int c=0;
+     for(int y=15;y<=1015;x+=30){
+      for(int x = 15; x<=1015; x+=30) {
       //we need to change the values for the coordinates, spacing is off
-        return chicken.getImage();
+        chickens[c]= new Chicken(1,x,y);
+        g.drawImage(chickens[c].getImage(),chickens[c].getX(), chickens[x].getY());
+        c++;
+      }}
     }
 }
     
