@@ -14,6 +14,7 @@ public class Chicken extends Enemy
 {
   private int myLives, mySize;
   private double myX, myY;
+  private ImageIcon chicken = new ImageIcon("Chicken without background.png");
   private Egg myEgg;
    /************************************************************* 
    * Constructs a Chicken with initial coordinates specified by x and y,
@@ -67,6 +68,9 @@ public class Chicken extends Enemy
    **************************************************************/
   public double getY(){
     return myY;
+  }
+  public ImageIcon getImage(){
+  	return chicken;
   }
    /***************************************************************
    * Sets the number of lives
