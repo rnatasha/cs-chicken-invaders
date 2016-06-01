@@ -4,11 +4,10 @@
    public class Scoreboard extends JPanel
    {
       private JLabel highscore, score1, score2, score3, score4, score5;
+      Image background;
       public Scoreboard10()
       {
-         ImageIcon background = new ImageIcon("//insert image name from file");
-         //however you add pictures to panels idk
-         
+         background = Toolkit.getDefaultToolkit().createImage("//insert picture name");
          setLayout(new BoxLayout(1, 3)); //five scores, "high score" label, and button to play again
          add(new JLabel("HIGH SCORE", SwingConstants.CENTER));
          highscore.setFont(new Font("Century Gothic", Font.BOLD, 60));
@@ -52,9 +51,14 @@
          JButton exit = new JButton("Exit");
          button1.addActionListener(new Listener1());
       }
-      public void update(boolean arg) //if arg is true, the player guessed correctly
+      
+      public void paint(Graphics g)
       {
-         
+         g.drawImage(background, 0, 0, null);
+      }
+      public void update(boolean arg)
+      {
+         //load the top 5 people
       }
       private class Listener1 implements ActionListener
       {
