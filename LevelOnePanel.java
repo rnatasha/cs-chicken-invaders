@@ -4,6 +4,7 @@ import java.awt.event.*;
 import java.awt.image.*;
 public class LevelOnePanel extends JPanel
 {
+    Chicken[] chickens = new Chicken[50];
     public void paintComponent(Graphics g)
     {
       int c=0;
