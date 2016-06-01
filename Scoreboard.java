@@ -56,9 +56,13 @@
       {
          g.drawImage(background, 0, 0, null);
       }
-      public void update(boolean arg)
-      {
-         //load the top 5 people
+      public void update(User num1, User num2, User num3, User num4, User num5) //in other panel, need to have already instantiated 
+      {                                                                         //and declared User objects 
+         score1.setText(num1.getName() + "\t\t" + num1.getScore());
+         score2.setText(num2.getName() + "\t\t" + num2.getScore());
+         score3.setText(num3.getName() + "\t\t" + num3.getScore());
+         score4.setText(num4.getName() + "\t\t" + num4.getScore());
+         score5.setText(num5.getName() + "\t\t" + num5.getScore());
       }
       private class Listener1 implements ActionListener
       {
