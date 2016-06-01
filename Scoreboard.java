@@ -54,22 +54,13 @@
       }
       public void update(boolean arg) //if arg is true, the player guessed correctly
       {
-         if (arg == true) 
+         
+      }
+      private class Listener1 implements ActionListener
+      {
+         public void actionPerformed(ActionEvent e)
          {
-         label2.setText("Yes");
-         run++;
-         if (max < run)
-         {
-         max = run;
-         }
-         label1.setText(""+run);
-         label3.setText(""+ max);
-         }
-         else
-         {
-         label2.setText("No");
-         run =0;
-         label1.setText("" + run);
+            System.out.exit(0);
          }
       }
    }
