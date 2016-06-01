@@ -1,11 +1,14 @@
 
    import javax.swing.*;
-   import java.awt.*; //testing to see if two people can work on it at once 
+   import java.awt.*; 
    public class Scoreboard extends JPanel
    {
       private JLabel highscore, score1, score2, score3, score4, score5;
       public Scoreboard10()
       {
+         ImageIcon background = new ImageIcon("//insert image name from file");
+         //however you add pictures to panels idk
+         
          setLayout(new BoxLayout(1, 3)); //five scores, "high score" label, and button to play again
          add(new JLabel("HIGH SCORE", SwingConstants.CENTER));
          highscore.setFont(new Font("Century Gothic", Font.BOLD, 60));
@@ -13,26 +16,41 @@
          add(highscore);
          
          JPanel subpanel = new JPanel();
-         panel.setLayout(new BoxLayout(1, 5));
-         add(panel);
+         subpanel.setLayout(new BoxLayout(1, 5));
+         add(subpanel);
          
-         label = new JLabel("");
-         label.setFont(new Font("Serif", Font.BOLD, 30));
-         label.setHorizontalAlignment(SwingConstants.CENTER);
-         label.setForeground(Color.black);
-         add(label, BorderLayout.NORTH);
-         /*add(new JLabel("Run: ", SwingConstants.RIGHT));
-         label1 = new JLabel(""+run);
-         label1.setHorizontalAlignment(SwingConstants.LEFT);
-         add(label1);
-         label2 = new JLabel("---");
-         label2.setHorizontalAlignment(SwingConstants.CENTER);
-         label2.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 20));
-         add(label2);
-         add(new JLabel("Max: ", SwingConstants.RIGHT));
-         label3 = new JLabel(""+max);
-         label3.setHorizontalAlignment(SwingConstants.LEFT);
-         add(label3);*/
+         score1 = new JLabel("");
+         score1.setFont(new Font("Serif", Font.BOLD, 30));
+         score1.setHorizontalAlignment(SwingConstants.LEFT);
+         score1.setForeground(Color.black);
+         subpanel.add(score1);\
+         
+         score2 = new JLabel("");
+         score2.setFont(new Font("Serif", Font.BOLD, 30));
+         score2.setHorizontalAlignment(SwingConstants.LEFT);
+         score2.setForeground(Color.black);
+         subpanel.add(score2);
+         
+         score3 = new JLabel("");
+         score3.setFont(new Font("Serif", Font.BOLD, 30));
+         score3.setHorizontalAlignment(SwingConstants.LEFT);
+         score3.setForeground(Color.black);
+         subpanel.add(score3);
+         
+         score4 = new JLabel("");
+         score4.setFont(new Font("Serif", Font.BOLD, 30));
+         score4.setHorizontalAlignment(SwingConstants.LEFT);
+         score4.setForeground(Color.black);
+         subpanel.add(score4);
+         
+         score5 = new JLabel("");
+         score5.setFont(new Font("Serif", Font.BOLD, 30));
+         score5.setHorizontalAlignment(SwingConstants.LEFT);
+         score5.setForeground(Color.black);
+         subpanel.add(score5);
+         
+         JButton exit = new JButton("Exit");
+         button1.addActionListener(new Listener1());
       }
       public void update(boolean arg) //if arg is true, the player guessed correctly
       {
