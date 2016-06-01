@@ -22,7 +22,7 @@
          score1.setFont(new Font("Serif", Font.BOLD, 30));
          score1.setHorizontalAlignment(SwingConstants.LEFT);
          score1.setForeground(Color.black);
-         subpanel.add(score1);\
+         subpanel.add(score1);
          
          score2 = new JLabel("");
          score2.setFont(new Font("Serif", Font.BOLD, 30));
