@@ -1,4 +1,4 @@
-
+   import java.awt.Color;
    import javax.swing.*;
    import java.awt.*; 
    public class Scoreboard extends JPanel
@@ -20,30 +20,35 @@
          
          score1 = new JLabel("");
          score1.setFont(new Font("Serif", Font.BOLD, 30));
+         score1.setForeground(new Color(179, 218, 255));
          score1.setHorizontalAlignment(SwingConstants.LEFT);
          score1.setForeground(Color.black);
          subpanel.add(score1);
          
          score2 = new JLabel("");
          score2.setFont(new Font("Serif", Font.BOLD, 30));
+         score2.setForeground(new Color(179, 218, 255));
          score2.setHorizontalAlignment(SwingConstants.LEFT);
          score2.setForeground(Color.black);
          subpanel.add(score2);
          
          score3 = new JLabel("");
          score3.setFont(new Font("Serif", Font.BOLD, 30));
+         score3.setForeground(new Color(179, 218, 255));
          score3.setHorizontalAlignment(SwingConstants.LEFT);
          score3.setForeground(Color.black);
          subpanel.add(score3);
          
          score4 = new JLabel("");
          score4.setFont(new Font("Serif", Font.BOLD, 30));
+         score4.setForeground(new Color(179, 218, 255));
          score4.setHorizontalAlignment(SwingConstants.LEFT);
          score4.setForeground(Color.black);
          subpanel.add(score4);
          
          score5 = new JLabel("");
          score5.setFont(new Font("Serif", Font.BOLD, 30));
+         score5.setForeground(new Color(179, 218, 255));
          score5.setHorizontalAlignment(SwingConstants.LEFT);
          score5.setForeground(Color.black);
          subpanel.add(score5);
