@@ -8,23 +8,17 @@
    public class Scoreboard extends JPanel
    {
       private JLabel highscore, score1, score2, score3, score4, score5;
-      Image background;
-      User[] array;
+      private Image background;
+      private User[] array = input("data.txt");
       Scanner infile;
       
       public static void main(String[] args)
       {
-         array = input("data.txt");
          sort(array);
          output(array);
       }
       public Scoreboard10()
       {
-         for(int k = 0; k < 5; k++)
-         {
-            array[k] = infile.next() + infile.nextInt();
-         }
-         
          background = Toolkit.getDefaultToolkit().createImage("//insert picture name");
          setLayout(new BoxLayout(1, 3)); //five scores, "high score" label, and button to exit
          add(new JLabel("HIGH SCORE", SwingConstants.CENTER));
@@ -36,35 +30,35 @@
          subpanel.setLayout(new BoxLayout(1, 5));
          add(subpanel);
          
-         score1 = new JLabel(array[0].getName+"\t"+array[0].getScore();
+         score1 = new JLabel(array[0].toString());
          score1.setFont(new Font("Serif", Font.BOLD, 30));
          score1.setForeground(new Color(179, 218, 255));
          score1.setHorizontalAlignment(SwingConstants.LEFT);
          score1.setForeground(Color.black);
          subpanel.add(score1);
          
-         score2 = new JLabel("");
+         score2 = new JLabel(array[1].toString());
          score2.setFont(new Font("Serif", Font.BOLD, 30));
          score2.setForeground(new Color(179, 218, 255));
          score2.setHorizontalAlignment(SwingConstants.LEFT);
          score2.setForeground(Color.black);
          subpanel.add(score2);
          
-         score3 = new JLabel("");
+         score3 = new JLabel(array[2].toString());
          score3.setFont(new Font("Serif", Font.BOLD, 30));
          score3.setForeground(new Color(179, 218, 255));
          score3.setHorizontalAlignment(SwingConstants.LEFT);
          score3.setForeground(Color.black);
          subpanel.add(score3);
          
-         score4 = new JLabel("");
+         score4 = new JLabel(array[3].toString());
          score4.setFont(new Font("Serif", Font.BOLD, 30));
          score4.setForeground(new Color(179, 218, 255));
          score4.setHorizontalAlignment(SwingConstants.LEFT);
          score4.setForeground(Color.black);
          subpanel.add(score4);
          
-         score5 = new JLabel("");
+         score5 = new JLabel(array[4].toString());
          score5.setFont(new Font("Serif", Font.BOLD, 30));
          score5.setForeground(new Color(179, 218, 255));
          score5.setHorizontalAlignment(SwingConstants.LEFT);
@@ -79,14 +73,7 @@
       {
          g.drawImage(background, 0, 0, null);
       }
-      /*public void update(User num1, User num2, User num3, User num4, User num5) //in other panel, need to have already instantiated 
-      {                                                                         //and declared User objects 
-         score1.setText(num1.getName() + "\t\t" + num1.getScore());
-         score2.setText(num2.getName() + "\t\t" + num2.getScore());
-         score3.setText(num3.getName() + "\t\t" + num3.getScore());
-         score4.setText(num4.getName() + "\t\t" + num4.getScore());
-         score5.setText(num5.getName() + "\t\t" + num5.getScore());
-      }*/
+      
       private class Listener1 implements ActionListener
       {
          public void actionPerformed(ActionEvent e)
@@ -97,7 +84,7 @@
       
         public static User[] input(String filename)
         {
-          infile = null;
+          Scanner infile = null;
           try{
             infile = new Scanner(new File(filename));
           }
