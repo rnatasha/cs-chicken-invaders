@@ -18,6 +18,7 @@ public class LevelOnePanel extends JPanel
         c++;
       }}
       User player = new User(name, avatar);
+      g.drawImage(player.getImage(),player.getX(), player.getY());//write User get Image method.
     }
 }
     
