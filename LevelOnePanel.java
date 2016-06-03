@@ -4,6 +4,8 @@ import java.awt.event.*;
 import java.awt.image.*;
 public class LevelOnePanel extends JPanel
 {
+    String name;
+    ImageIcon avatar;
     Chicken[] chickens = new Chicken[50];
     public void paintComponent(Graphics g)
     {
@@ -15,6 +17,7 @@ public class LevelOnePanel extends JPanel
         g.drawImage(chickens[c].getImage(),chickens[c].getX(), chickens[x].getY());
         c++;
       }}
+      User player = new User(name, avatar);
     }
 }
     
