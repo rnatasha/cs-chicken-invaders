@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 public class ScorePanel
 { //print scores & names into data.txt before running this
   //order: name, score
-  public ScorePanel(User[] array)
+  public ScorePanel()
   { 
     User[] array = input("data.txt");
     sort(array);
