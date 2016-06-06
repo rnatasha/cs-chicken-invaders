@@ -21,14 +21,14 @@ public class Scoreboard extends JPanel
    public Scoreboard()
    {
       background = Toolkit.getDefaultToolkit().createImage("//insert picture name");
-      setLayout(new BoxLayout(1, 3)); //five scores, "high score" label, and button to exit
+      setLayout(new GridLayout(1, 3)); //five scores, "high score" label, and button to exit
       add(new JLabel("HIGH SCORE", SwingConstants.CENTER));
       highscore.setFont(new Font("Century Gothic", Font.BOLD, 60));
       highscore.setHorizontalAlignment(SwingConstants.CENTER);
       add(highscore);
          
       JPanel subpanel = new JPanel();
-      subpanel.setLayout(new BoxLayout(1, 5));
+      subpanel.setLayout(new GridLayout(1, 5));
       add(subpanel);
          
       score1 = new JLabel(array[0].toString());
@@ -70,7 +70,7 @@ public class Scoreboard extends JPanel
       exit.addActionListener(new ExitListener());
    }
       
-   public void paint(Graphics g)
+   public void paintComponent(Graphics g)
    {
       g.drawImage(background, 0, 0, null);
    }
@@ -97,9 +97,9 @@ public class Scoreboard extends JPanel
       int numitems = infile.nextInt();
       array = new User[numitems];
       for(int k = 0; k < numitems; k++)
-         array[k] = new User(infile.next(), infile.nextInt());
+         array[k] = new User(infile.nextLine(), infile.nextInt());
       infile.close();
-      //return array;
+      return array;
    }
           
    public static User[] sort(User[] array)  //need findMin method
@@ -110,6 +110,7 @@ public class Scoreboard extends JPanel
          maxPos = findMax(array, array.length - k);
          swap(array, maxPos, array.length-k-1);
       }
+      return array;
    }
       
    public static int findMax(User[] array, int upper)
@@ -130,7 +131,7 @@ public class Scoreboard extends JPanel
       array[b] = temp;
    }
       
-   public static void output(User[] array) throws Exception
+   public static void output(User[] array) //throws Exception
    {
       PrintStream outfile = null;
       try{
