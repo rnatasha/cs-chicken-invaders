@@ -9,21 +9,30 @@ public class User
   private Rocket myRocket;
   private String myName;
   private ImageIcon myAvatar;
-  public User(String name, ImageIcon avatar){
+  public User(String name, String avatar){
     myLives=3;
-    myX=200; //some X and Y value such that it is in the middle bottom of the screen
-    myY=400;
+    myX=900; //some X and Y value such that it is in the middle bottom of the screen
+    myY=850;
     myRocket= new Rocket(myX, myY);
-    myAvatar = avatar;
+    myAvatar = new ImageIcon(avatar);
     myScore = 0;
     myName = name;
   }
-  public User(String name, ImageIcon avatar, int score){
+  public User(String name, String avatar, int score){
    myLives=3;
-    myX=200; //some X and Y value such that it is in the middle bottom of the screen
-    myY=400;
+    myX=900; //some X and Y value such that it is in the middle bottom of the screen
+    myY=850;
     myRocket= new Rocket(myX, myY);
-    myAvatar = avatar;
+    myAvatar = new ImageIcon(avatar);
+    myScore=score;
+    myName = name;
+  }
+  public User(String name, int score){
+   myLives=3;
+    myX=900; //some X and Y value such that it is in the middle bottom of the screen
+    myY=850;
+    myRocket= new Rocket(myX, myY);
+    //myAvatar = new ImageIcon(avatar);
     myScore=score;
     myName = name;
   }
