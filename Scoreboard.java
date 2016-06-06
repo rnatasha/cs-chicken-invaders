@@ -66,7 +66,7 @@
          subpanel.add(score5);
          
          JButton exit = new JButton("Exit");
-         button1.addActionListener(new Listener1());
+         exit.addActionListener(new ExitListener());
       }
       
       public void paint(Graphics g)
