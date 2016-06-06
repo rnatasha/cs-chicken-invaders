@@ -4,32 +4,61 @@ import java.awt.event.*;
 import java.awt.image.*;
 public class User
 {
-  private int myLives;
-  private double myX, myY;
+  private int myLives, myScore;
+  private int myX, myY;
   private Rocket myRocket;
-  public User(){
+  private String myName;
+  private ImageIcon myAvatar;
+  public User(String name, ImageIcon avatar){
     myLives=3;
     myX=200; //some X and Y value such that it is in the middle bottom of the screen
     myY=400;
     myRocket= new Rocket(myX, myY);
+    myAvatar = avatar;
+    myScore = 0;
+    myName = name;
+  }
+  public User(String name, ImageIcon avatar, int score){
+   myLives=3;
+    myX=200; //some X and Y value such that it is in the middle bottom of the screen
+    myY=400;
+    myRocket= new Rocket(myX, myY);
+    myAvatar = avatar;
+    myScore=score;
+    myName = name;
   }
   public int getLives(){
     return myLives;
   }
-  public double getX(){
+  public int getX(){
     return myX;
   }
-  public double getY(){
+  public int getY(){
     return myY;
+  }
+  public int getScore(){
+    return myScore;
+  }
+  public ImageIcon getImageIcon(){
+      return myAvatar;
+  }
+  public String getName(){
+   return myName;
   }
   public void setLives(int x){
     myLives=x;
   }
-  public void setX(double x){
+  public void setX(int x){
     myX=x;
   }
-  public void setY(double y){
+  public void setY(int y){
     myY=y;
+  }
+  public void setScore(int s){
+    myScore= s;
+  }
+  public void setName(String name){
+      myName = name;
   }
   public void attack(Enemy e){
     myRocket.attack(e);
@@ -59,5 +88,8 @@ public class User
    
   public void move(int x){//when used x= 1 or -1, for left or right movement along bottom of screen
     myX+=x;
+  }
+  public String toString(){
+   return myName +"\t\t"+myScore;
   }
 }
