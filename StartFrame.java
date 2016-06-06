@@ -6,6 +6,6 @@ public class StartFrame{
       frame.setLocation(100,100);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setContentPane(new StartPanel(frame));
-      frame.setSize(100,100);
+      frame.setSize(500,500);
    }
 }
