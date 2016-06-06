@@ -8,36 +8,39 @@ import java.util.*;    //the Scanner class
 import javax.swing.JOptionPane;
 public class Scoreboard extends JPanel
 {
-   private JLabel highscore, score1, score2, score3, score4, score5;
-   private Image background;
+   private static JPanel subpanel;
+   private static JLabel highscore, score1, score2, score3, score4, score5;
+  // private Image background;
    private static User[] array = input("data.txt");
    Scanner infile;
-      
-   public static void main(String[] args)
-   {
-      sort(array);
-      output(array);
-   }
+
    public Scoreboard()
    {
-      background = Toolkit.getDefaultToolkit().createImage("//insert picture name");
+      
+      //background = Toolkit.getDefaultToolkit().createImage("scoreboard.jpg");
       setLayout(new GridLayout(1, 3)); //five scores, "high score" label, and button to exit
-      add(new JLabel("HIGH SCORE", SwingConstants.CENTER));
-      highscore.setFont(new Font("Century Gothic", Font.BOLD, 60));
+      highscore=new JLabel("HIGH SCORE", SwingConstants.CENTER);
+      add(highscore);
+      highscore.setFont(new Font("Serif", Font.BOLD, 30));
       highscore.setHorizontalAlignment(SwingConstants.CENTER);
       add(highscore);
          
-      JPanel subpanel = new JPanel();
+     subpanel = new JPanel();
       subpanel.setLayout(new GridLayout(1, 5));
       add(subpanel);
-         
-      score1 = new JLabel(array[0].toString());
+      
+      sort(array);
+      output(array);
+      
+      
+      
+       score1 = new JLabel(array[0].toString());
       score1.setFont(new Font("Serif", Font.BOLD, 30));
       score1.setForeground(new Color(179, 218, 255));
       score1.setHorizontalAlignment(SwingConstants.LEFT);
       score1.setForeground(Color.black);
       subpanel.add(score1);
-         
+      /*   
       score2 = new JLabel(array[1].toString());
       score2.setFont(new Font("Serif", Font.BOLD, 30));
       score2.setForeground(new Color(179, 218, 255));
@@ -65,16 +68,18 @@ public class Scoreboard extends JPanel
       score5.setHorizontalAlignment(SwingConstants.LEFT);
       score5.setForeground(Color.black);
       subpanel.add(score5);
+     */
          
+              
       JButton exit = new JButton("Exit");
       exit.addActionListener(new ExitListener());
    }
       
-   public void paintComponent(Graphics g)
+  /* public void paintComponent(Graphics g)
    {
       g.drawImage(background, 0, 0, null);
    }
-      
+      */
    private class ExitListener implements ActionListener
    {
       public void actionPerformed(ActionEvent e)
@@ -94,34 +99,34 @@ public class Scoreboard extends JPanel
          JOptionPane.showMessageDialog(null, "The file could not be found.");
          System.exit(0);
       }
-      int numitems = infile.nextInt();
+      int numitems = infile.nextInt();//has next
       array = new User[numitems];
-      for(int k = 0; k < numitems; k++)
-         array[k] = new User(infile.nextLine(), infile.nextInt());
+      for(int k = 0; k < numitems; k++)//"name  score" same line in data.txt
+         array[k] = new User(infile.next(), infile.nextInt());
       infile.close();
       return array;
    }
           
    public static User[] sort(User[] array)  //need findMin method
    {
-      int maxPos;
+      int minPos;
       for(int k = 0; k < array.length; k++)
       {
-         maxPos = findMax(array, array.length - k);
-         swap(array, maxPos, array.length-k-1);
+         minPos = findMin(array, array.length - k);
+         swap(array, minPos, array.length-k-1);
       }
       return array;
    }
       
-   public static int findMax(User[] array, int upper)
+   public static int findMin(User[] array, int upper)
    {
-      int maxPos = 0;
+      int minPos = 0;
       for(int j = 1; j < upper; j++)
       {
-         if(array[j].getScore() > array[maxPos].getScore())
-            maxPos = j;
+         if(array[j].getScore() < array[minPos].getScore())
+            minPos = j;
       }
-      return maxPos;
+      return minPos;
    }
       
    public static void swap(User[] array, int a, int b)
