@@ -13,7 +13,7 @@ public class StartPanel extends JPanel
       
       background = Toolkit.getDefaultToolkit().createImage("//insert picture name");
       setLayout(new BorderLayout()); //five scores, "high score" label, and button to exit
-      add(new JLabel("HIGH SCORE", SwingConstants.CENTER));
+      add(new JLabel("CHICKEN INVADERS", SwingConstants.CENTER));
       highscore.setFont(new Font("Century Gothic", Font.BOLD, 60));
       highscore.setHorizontalAlignment(SwingConstants.CENTER);
       add(highscore, BorderLayout.NORTH);
