@@ -14,72 +14,72 @@ public class Scoreboard extends JPanel
    private static User[] array = input("data.txt");
    Scanner infile;
 
+   public static void main(String[] args)
+   {
+      array = input("data.txt");
+   }
+   
+      /*public void paintComponent(Graphics g)
+   {
+      ImageIcon background = new ImageIcon("scoreboard.jpg");
+      g.drawImage(background.getImage(), 1, 1, 100, 400, null);
+   }*/
+   
    public Scoreboard()
    {
-      
-      //background = Toolkit.getDefaultToolkit().createImage("scoreboard.jpg");
-      setLayout(new GridLayout(1, 3)); //five scores, "high score" label, and button to exit
+      setLayout(new BorderLayout()); //five scores, "high score" label, and button to exit
       highscore=new JLabel("HIGH SCORE", SwingConstants.CENTER);
       add(highscore);
       highscore.setFont(new Font("Serif", Font.BOLD, 30));
       highscore.setHorizontalAlignment(SwingConstants.CENTER);
-      add(highscore);
+      add(highscore, BorderLayout.NORTH);
          
-     subpanel = new JPanel();
-      subpanel.setLayout(new GridLayout(1, 5));
-      add(subpanel);
+      subpanel = new JPanel();
+      subpanel.setLayout(new GridLayout(5, 1)); //5,1 for grid
+      add(subpanel, BorderLayout.CENTER);
       
       sort(array);
       output(array);
       
-      
-      
-       score1 = new JLabel(array[0].toString());
+      score1 = new JLabel(array[0].toString());
       score1.setFont(new Font("Serif", Font.BOLD, 30));
       score1.setForeground(new Color(179, 218, 255));
-      score1.setHorizontalAlignment(SwingConstants.LEFT);
+      score1.setHorizontalAlignment(SwingConstants.CENTER);
       score1.setForeground(Color.black);
       subpanel.add(score1);
-      /*   
+       
       score2 = new JLabel(array[1].toString());
       score2.setFont(new Font("Serif", Font.BOLD, 30));
       score2.setForeground(new Color(179, 218, 255));
-      score2.setHorizontalAlignment(SwingConstants.LEFT);
+      score2.setHorizontalAlignment(SwingConstants.CENTER);
       score2.setForeground(Color.black);
       subpanel.add(score2);
          
       score3 = new JLabel(array[2].toString());
       score3.setFont(new Font("Serif", Font.BOLD, 30));
       score3.setForeground(new Color(179, 218, 255));
-      score3.setHorizontalAlignment(SwingConstants.LEFT);
+      score3.setHorizontalAlignment(SwingConstants.CENTER);
       score3.setForeground(Color.black);
       subpanel.add(score3);
          
       score4 = new JLabel(array[3].toString());
       score4.setFont(new Font("Serif", Font.BOLD, 30));
       score4.setForeground(new Color(179, 218, 255));
-      score4.setHorizontalAlignment(SwingConstants.LEFT);
+      score4.setHorizontalAlignment(SwingConstants.CENTER);
       score4.setForeground(Color.black);
       subpanel.add(score4);
          
       score5 = new JLabel(array[4].toString());
       score5.setFont(new Font("Serif", Font.BOLD, 30));
       score5.setForeground(new Color(179, 218, 255));
-      score5.setHorizontalAlignment(SwingConstants.LEFT);
+      score5.setHorizontalAlignment(SwingConstants.CENTER);
       score5.setForeground(Color.black);
       subpanel.add(score5);
-     */
-         
-              
+     
       JButton exit = new JButton("Exit");
       exit.addActionListener(new ExitListener());
    }
       
-  /* public void paintComponent(Graphics g)
-   {
-      g.drawImage(background, 0, 0, null);
-   }
-      */
    private class ExitListener implements ActionListener
    {
       public void actionPerformed(ActionEvent e)
@@ -140,7 +140,7 @@ public class Scoreboard extends JPanel
    {
       PrintStream outfile = null;
       try{
-         outfile = new PrintStream(new FileOutputStream("data.txt"));
+         outfile = new PrintStream(new FileOutputStream("data.txt", true));
       }
       catch(FileNotFoundException e)
       {
