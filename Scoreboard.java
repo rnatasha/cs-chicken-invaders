@@ -10,14 +10,8 @@ public class Scoreboard extends JPanel
 {
    private static JPanel subpanel;
    private static JLabel highscore, score1, score2, score3, score4, score5;
-  // private Image background;
    private static User[] array = input("data.txt");
    Scanner infile;
-
-   public static void main(String[] args)
-   {
-      array = input("data.txt");
-   }
    
       /*public void paintComponent(Graphics g)
    {
@@ -41,35 +35,35 @@ public class Scoreboard extends JPanel
       sort(array);
       output(array);
       
-      score1 = new JLabel(array[0].toString());
+      score1 = new JLabel("1.\t" + array[0].toString());
       score1.setFont(new Font("Serif", Font.BOLD, 30));
       score1.setForeground(new Color(179, 218, 255));
       score1.setHorizontalAlignment(SwingConstants.CENTER);
       score1.setForeground(Color.black);
       subpanel.add(score1);
        
-      score2 = new JLabel(array[1].toString());
+      score2 = new JLabel("2.\t" + array[1].toString());
       score2.setFont(new Font("Serif", Font.BOLD, 30));
       score2.setForeground(new Color(179, 218, 255));
       score2.setHorizontalAlignment(SwingConstants.CENTER);
       score2.setForeground(Color.black);
       subpanel.add(score2);
          
-      score3 = new JLabel(array[2].toString());
+      score3 = new JLabel("3.\t" + array[2].toString());
       score3.setFont(new Font("Serif", Font.BOLD, 30));
       score3.setForeground(new Color(179, 218, 255));
       score3.setHorizontalAlignment(SwingConstants.CENTER);
       score3.setForeground(Color.black);
       subpanel.add(score3);
          
-      score4 = new JLabel(array[3].toString());
+      score4 = new JLabel("4.\t" + array[3].toString());
       score4.setFont(new Font("Serif", Font.BOLD, 30));
       score4.setForeground(new Color(179, 218, 255));
       score4.setHorizontalAlignment(SwingConstants.CENTER);
       score4.setForeground(Color.black);
       subpanel.add(score4);
          
-      score5 = new JLabel(array[4].toString());
+      score5 = new JLabel("5.\t" + array[4].toString());
       score5.setFont(new Font("Serif", Font.BOLD, 30));
       score5.setForeground(new Color(179, 218, 255));
       score5.setHorizontalAlignment(SwingConstants.CENTER);
