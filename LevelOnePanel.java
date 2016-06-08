@@ -2,13 +2,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.*;
+
 public class LevelOnePanel extends JPanel
 {
+      private BufferedImage myImage;
+      private Graphics myBuffer;
     String name;
     ImageIcon avatar = new ImageIcon("bunny.png");
     Chicken[] chickens = new Chicken[60];
     Timer t;
      User  player;
+     myImage =  new BufferedImage(FRAME, FRAME, BufferedImage.TYPE_INT_RGB);
+     myBuffer = myImage.getGraphics();
+
     public LevelOnePanel(){
       // t = new Timer(5, new Listener());
         // t.start();
@@ -17,6 +23,18 @@ public class LevelOnePanel extends JPanel
          addKeyListener(new Key());
          setFocusable(true);
     }
+     public void paint (Graphics myBuffer) //okay honestly i have no idea if any of this is right
+    {
+        for(int y=15;y<=195;y+=90){
+      for(int x = 100; x<=1810; x+=90){
+        chickens[c]= new Chicken(1,x,y);
+        g.drawImage(chickens[c].getImageIcon().getImage(),chickens[c].getX(), chickens[c].getY(), 80,80,null);
+        c++;
+        chickens[I].update(myBuffer);
+      }
+    }
+    player.update(myBuffer);
+        
     public void paintComponent(Graphics g)
     {
       ImageIcon background = new ImageIcon("background.png");
@@ -47,6 +65,7 @@ public class LevelOnePanel extends JPanel
                repaint();
          }
       }
+      
    /* public ImageIcon updateLives(){
     
     }*/
