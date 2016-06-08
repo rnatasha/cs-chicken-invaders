@@ -78,9 +78,9 @@ public class User
       reset myRocket at myX and myY
     */
   }
-  public void draw(Graphics myBuffer, String filename){
-    ImageIcon pic = new ImageIcon(filename);
-    myBuffer.drawImage(pic.getImage(), 80, 80, 175, 150, null); //not the exact dimensions
+  public void update(Graphics myBuffer, int x){
+    move(x);
+    myBuffer.drawImage(myAvatar.getImage(), getX(), getY(), 150, 150, null); //not the exact dimensions
   }
   private double distance(double x1, double y1, double x2, double y2) {
     return Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
