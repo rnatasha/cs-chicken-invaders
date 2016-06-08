@@ -117,8 +117,10 @@ public class Chicken extends Enemy
     myEgg= new Egg(myX,myY);
   }
   public void update(Graphics myBuffer){
-   if(getLives()==0)
-      myBuffer.drawImage(chicken.getImage(), 3000,3000
+      if(getLives() == 0)
+         myBuffer.drawImage(chicken.getImage(), 3000, 3000, 0, 0, null);
+      else
+         myBuffer.drawImage(chicken.getImage(), getX(), getY(), 150, 150, null);
   }
 
 }
