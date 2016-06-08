@@ -13,7 +13,7 @@ import java.awt.image.*;
 public class Chicken extends Enemy
 {
   private int myLives, mySize;
-  private double myX, myY;
+  private int myX, myY;
   private ImageIcon chicken = new ImageIcon("Chicken without background.png");
   private Egg myEgg;
    /************************************************************* 
@@ -21,7 +21,7 @@ public class Chicken extends Enemy
    * the number of lives specified by (n-1)/5 + 1, where n is level number, and the size 
    * specified by 20. Initializes Egg object with Chicken's x and y coordinates.
    **************************************************************/
-  public Chicken(int n, double x, double y)
+  public Chicken(int n, int x, int y)
   {
     myLives=(n-1)/5 +1;
     mySize=20; //SOME DEFAULT SIZE FOR ALL THE SMALL CHICKENS?
@@ -34,7 +34,7 @@ public class Chicken extends Enemy
    * the number of lives specified by (n/5)*50, where n is level number, and the size 
    * specified by s. Initializes Egg object with Chicken's x and y coordinates.
    **************************************************************/
-  public Chicken(int n, int s, double x, double y){
+  public Chicken(int n, int s, int x, int y){
     myLives=(n/5)*50;
     mySize=s;
     myX=x;
@@ -59,17 +59,17 @@ public class Chicken extends Enemy
    * Returns the Chicken's x coordinate
    * @return	 X
    **************************************************************/
-  public double getX(){
+  public int getX(){
     return myX;
   }
    /*************************************************************** 
    * Returns the Chicken's y coordinate
    * @return	 Y
    **************************************************************/
-  public double getY(){
+  public int getY(){
     return myY;
   }
-  public ImageIcon getImage(){
+  public ImageIcon getImageIcon(){
   	return chicken;
   }
    /***************************************************************
@@ -90,14 +90,14 @@ public class Chicken extends Enemy
    * Sets the x coordinate
    * @param x	 assigns x to myX or the Chicken's x coordinate
    **************************************************************/
-  public void setX(double x){
+  public void setX(int x){
     myX=x;
   }
    /***************************************************************
    * Sets the y coordinate
    * @param y	 assigns y to myY or the Chicken's y coordinate
    **************************************************************/
-  public void setY(double y){
+  public void setY(int y){
     myY=y;
   }
    /***************************************************************
@@ -115,6 +115,10 @@ public class Chicken extends Enemy
     myEgg.release(bottomEdge);
     //repaint egg
     myEgg= new Egg(myX,myY);
+  }
+  public void update(Graphics myBuffer){
+   if(getLives()==0)
+      myBuffer.drawImage(chicken.getImage(), 3000,3000
   }
 
 }
