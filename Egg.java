@@ -9,12 +9,12 @@
 public class Egg extends Enemy
 {
   private int myLives, mySize;
-  private double myX, myY;
+  private int myX, myY;
   /************************************************************* 
    * Constructs an Egg with initial coordinates specified by x and y,
    * lives set to 1, and size set to 20.
    **************************************************************/
-  public Egg(double x, double y){
+  public Egg(int x, int y){
     myX = x;
     myY = y;
     myLives=1;
@@ -24,14 +24,14 @@ public class Egg extends Enemy
    * Returns the Egg's x-coordinate
    * @return	 X
    **************************************************************/
-  public double getX(){
+  public int getX(){
     return myX;
   }
    /*************************************************************** 
    * Returns the Egg's y-coordinate
    * @return	 Y
    **************************************************************/
-  public double getY(){
+  public int getY(){
     return myY;
   }
    /*************************************************************** 
@@ -52,14 +52,14 @@ public class Egg extends Enemy
    * Sets the x coordinate
    * @param x	 assigns x to myX or the Egg's x-coordinate
    **************************************************************/
-  public void setX(double x){
+  public void setX(int x){
     myX=x;
   }
    /***************************************************************
    * Sets the y coordinate
    * @param y	 assigns y to myY or the Egg's y-coordinate
    **************************************************************/
-  public void setY(double y){
+  public void setY(int y){
     myY=y;
   }
    /***************************************************************
