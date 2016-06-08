@@ -44,7 +44,7 @@ public class LevelOnePanel extends JPanel
                player.setX(player.getX()-10);
                if(e.getKeyCode() == KeyEvent.VK_S)
                player.setX(player.getX()-10);
-               player.repaint();
+               repaint();
          }
       }
    /* public ImageIcon updateLives(){
