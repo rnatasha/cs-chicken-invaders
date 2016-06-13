@@ -29,7 +29,7 @@ public class Scoreboard extends JPanel
       add(highscore, BorderLayout.NORTH);
          
       subpanel = new JPanel();
-      subpanel.setLayout(new GridLayout(5, 1)); //5,1 for grid
+      subpanel.setLayout(new GridLayout(6, 1)); //5,1 for grid
       add(subpanel, BorderLayout.CENTER);
       
       sort(array);
@@ -72,6 +72,7 @@ public class Scoreboard extends JPanel
      
       JButton exit = new JButton("Exit");
       exit.addActionListener(new ExitListener());
+      subpanel.add(exit);
    }
       
    private class ExitListener implements ActionListener
